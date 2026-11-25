@@ -2,7 +2,7 @@ import mysql.connector
 
 HOST = "localhost"
 USER = "root"
-PASSWORD = "passwordhere"  # Replace with your MySQL root password
+PASSWORD = "password"  # Replace with your MySQL root password
 DB_NAME = "apparel_ie"
 
 # Step A: connect to the MySQL server and create the database
@@ -27,7 +27,8 @@ TABLES = [
         Department     VARCHAR(50),
         Skill_Level    VARCHAR(20),
         Joining_Date   DATE,
-        Contact_No     VARCHAR(15)
+        Contact_No     VARCHAR(15),
+        Employee_Status VARCHAR(10) NOT NULL DEFAULT 'Active'
     )
     """,
     """
@@ -80,7 +81,7 @@ TABLES = [
     """,
     """
     CREATE TABLE IF NOT EXISTS Production_Records (
-        Production_ID    INT PRIMARY KEY,
+        Production_ID    INT AUTO_INCREMENT PRIMARY KEY,
         Production_Date  DATE,
         Line_ID          INT,
         Employee_ID      INT,

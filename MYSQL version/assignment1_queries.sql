@@ -102,3 +102,7 @@ LEFT JOIN Line_Allocation la
     ON od.Operation_ID = la.Operation_ID
 GROUP BY od.Operation_ID, od.Operation_Name
 ORDER BY Allocated_Count DESC, od.Operation_Name;
+
+--Query 11: auto increment of employee id  
+ALTER TABLE Employee_Details MODIFY Employee_ID INT NOT NULL AUTO_INCREMENT;
+Employee_ID    INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
